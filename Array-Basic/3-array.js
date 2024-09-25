@@ -8,17 +8,24 @@
 
 // APPROACH 2
 function sum(arr, n) {
-  let currentArray = [];
+  // created a new array to store the reversed array
+  let newArray = new Array(n);
 
-  for (let i = 0; i < n; i++) {
-    // currentArray
+  // copying the original array elements in the reverse order
+  for (let i = n - 1; i >= 0; i--) {
+    newArray[n - i - 1] = arr[i];
   }
-  return currentArray;
+  for (let i = 0; i < n; i++) {
+    newArray[i] = arr[i];
+  }
+
+  return;
 }
 
-const arr = [1, 2, 3, 4, 5, 6, 7];
+const arr = [12, 55, 78, 45, 32];
 
 const n = arr.length;
 
 const res = sum(arr, n);
 console.log("Reverse an array " + res);
+// Refer the TUF
