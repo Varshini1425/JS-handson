@@ -1,31 +1,31 @@
-// Reverse an array
+// Function to reverse array using an auxiliary array
+function reverse(arr) {
+  let n = arr.length;
+  let ans = new Array(n);
 
-// APPROACH 1
-// function sum(arr, n) {
-//   let reversedArray = arr.reverse();
-//   return reversedArray;
-// }
-
-// APPROACH 2
-function sum(arr, n) {
-  // created a new array to store the reversed array
-  let newArray = new Array(n);
-
-  // copying the original array elements in the reverse order
+  // Fill new array with elements of original array in reverse order
   for (let i = n - 1; i >= 0; i--) {
-    newArray[n - i - 1] = arr[i];
-  }
-  for (let i = 0; i < n; i++) {
-    newArray[i] = arr[i];
+    ans[n - i - 1] = arr[i];
   }
 
-  return;
+  // Copy the elements back to the original array
+  for (let i = 0; i < n; i++) {
+    arr[i] = ans[i];
+  }
 }
 
-const arr = [12, 55, 78, 45, 32];
+// Function to print array
+function printArray(arr) {
+  console.log(arr.join(" "));
+}
 
-const n = arr.length;
+const arr = [5, 4, 3, 2, 1];
 
-const res = sum(arr, n);
-console.log("Reverse an array " + res);
-// Refer the TUF
+console.log("Original array: ");
+printArray(arr);
+
+// Function call to reverse the array
+reverse(arr);
+
+console.log("Reversed array: ");
+printArray(arr);
