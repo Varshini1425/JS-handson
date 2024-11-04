@@ -51,6 +51,6 @@ function reverseWords(s) {
   return ans; // Return the stored result
 }
 
-let s = "welcome to the jungle";
+let s = "welcome     to the jungle   ";
 const res = reverseWords(s);
 console.log(`The reverses words are converted (from) ${s} (to) --- ${res}`);
